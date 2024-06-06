@@ -3,12 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <title>Reisebuchungs-Formular</title>
-
 </head>
 <body>
 
 <h1>Reisebuchungs-Formular</h1>
 
+<form action="/submit-booking" method="POST">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="email">E-Mail:</label><br>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <label for="phone">Telefonnummer:</label><br>
+  <input type="tel" id="phone" name="phone" required><br><br>
+
+  <label for="departure-airport">Abflughafen:</label><br>
+  <select id="departure-airport" name="departure-airport" required>
+    <optgroup label="Deutschland">
+      <option value="FRA">Frankfurt</option>
+      <option value="MUC">München</option>
+      <option value="BER">Berlin</option>
+    </optgroup>
+    <optgroup label="Österreich">
+      <option value="VIE">Wien</option>
+      <option value="GRZ">Graz</option>
+      <option value="SZG">Salzburg</option>
+    </optgroup>
+    <optgroup label="Italien">
+      <option value="FCO">Rom</option>
+      <option value="MXP">Mailand</option>
+      <option value="VCE">Venedig</option>
+    </optgroup>
+    <optgroup label="Frankreich">
+      <option value="CDG">Paris</option>
+      <option value="LYS">Lyon</option>
+      <option value="NCE">Nizza</option>
+    </optgroup>
+  </select><br><br>
+
+  <label>Art der Unterkunft:</label><br>
+  <input type="radio" id="hotel" name="accommodation" value="Hotel" required>
+  <label for="hotel">Hotel</label><br>
+  <input type="radio" id="apartment" name="accommodation" value="Ferienwohnung">
+  <label for="apartment">Ferienwohnung</label><br>
+  <input type="radio" id="hostel" name="accommodation" value="Hostel">
+  <label for="hostel">Hostel</label><br><br>
+
+  <label>Zusätzliche Dienstleistungen:</label><br>
+  <input type="checkbox" id="insurance" name="services" value="Reiseversicherung">
+  <label for="insurance">Reiseversicherung</label><br>
+  <input type="checkbox" id="transfer" name="services" value="Flughafentransfer">
+  <label for="transfer">Flughafentransfer</label><br>
+  <input type="checkbox" id="extra-baggage" name="services" value="Zusätzliches Gepäck">
+  <label for="extra-baggage">Zusätzliches Gepäck</label><br><br>
+
+  <label for="start-date">Reisedatum:</label><br>
+  <input type="date" id="start-date" name="start-date" required><br><br>
+
+  <label for="end-date">Rückreisedatum:</label><br>
+  <input type="date" id="end-date" name="end-date" required><br><br>
+
+  <label for="duration">Dauer der Reise (Tage):</label><br>
+  <input type="number" id="duration" name="duration" min="1" max="21" required><br><br>
+
+  <label for="people">Anzahl der reisenden Personen:</label><br>
+  <input type="number" id="people" name="people" min="1" required><br><br>
+
+  <label for="airline">Bevorzugte Fluggesellschaft:</label><br>
+  <select id="airline" name="airline" required>
+    <option value="LH">Lufthansa</option>
+    <option value="SWISS">Swiss</option>
+    <option value="AF">Air France</option>
+    <option value="BA">British Airways</option>
+  </select><br><br>
+
+  <label>Weitere optionale Dienstleistungen:</label><br>
+  <input type="checkbox" id="priority-checkin" name="optional-services" value="Priority Check-In">
+  <label for="priority-checkin">Priority Check-In</label><br>
+  <input type="checkbox" id="extra-hand-baggage" name="optional-services" value="Zusätzliches Handgepäck">
+  <label for="extra-hand-baggage">Zusätzliches Handgepäck</label><br>
+  <input type="checkbox" id="car-rental" name="optional-services" value="Mietwagen">
+  <label for="car-rental">Mietwagen</label><br><br>
+
+  <label for="destination">Reiseziel:</label><br>
+  <input list="destinations" id="destination" name="destination" required>
+  <datalist id="destinations">
+    <option value="Paris"></option>
+    <option value="Rom"></option>
+    <option value="New York"></option>
+    <option value="Tokio"></option>
+    <option value="Sydney"></option>
+  </datalist><br><br>
+
+  <input type="submit" value="Buchen">
+  <input type="reset" value="Zurücksetzen">
+</form>
 
 </body>
 </html>
